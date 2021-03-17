@@ -1,0 +1,424 @@
+<!--https://www.chiaselect.com/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="麻花麵 每一口都充滿幸福的好味 嚴選日曬手摺細麵＋香醇白芝麻醬＋大紅袍花椒油 當麻醬遇上花椒居然碰撞出美妙的絕佳口感">
+    <meta name="keywords" content="賈以食日">
+    <title>賈以食日</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            border-top: 8px solid #111;
+            background-color: #F5F5F5;
+            font-family: "Lato","Open Sans","Helvetica Neue", Helvetica, Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun, sans-serif;;
+        }
+        .main {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            /* 物件水平居中 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .box {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 70px;
+        }
+        .logo img {
+            margin: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+        }
+        .custom-select {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            /* margin-bottom: 50px; */
+            border-top: 2px solid #d2d2d2; 
+            border-bottom: 2px solid #d2d2d2;
+        }
+        select {
+            padding: 15px;
+            font-size: 14px;
+            border: none;
+            height: 100px;
+            width: 200px;
+            color: #696969;
+            background-color: #F5F5F5;
+        }
+        .slideshow-container {
+            margin-top: 5px;
+        }
+        .item {
+            height: auto;
+            margin: 15px;
+            margin-top: 70px;
+        }
+        .img-item {
+            height: auto;
+            margin: 15px;
+            position: relative;
+        }
+        .img-item::before{
+            cursor: pointer;
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            bottom: 5px;
+            line-height: 40px;
+            content: "加入購物車";
+            text-align: center;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            visibility: hidden;
+        }
+        .img-item:hover::before{
+            visibility:visible;
+        }
+        .img-item:hover{
+            cursor:pointer;
+        }
+        .name {
+            color: #666666;
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0;
+            padding-left: 15px;
+        }
+        .name.video {
+            color: black;
+            text-align: center;
+            font-size: 16px;
+        }
+        .divid1 {
+            height: auto;
+            width: 1140px;
+        }
+        .divid1.video {
+            height: 650px;
+            width: 1170px;
+        }
+        .divid2 {
+            height: auto;
+            width: 540px;
+        }
+        .divid2.video {
+            height: 315px;
+            width: 570px;
+        }
+        .divid3 {
+            height: auto;
+            width: 340px;
+        }
+        .divid3.video {
+            height: 205px;
+            width: 370px;
+        }
+        .divid4 {
+            height: auto;
+            width: 240px;
+        }
+        .divid4.video {
+            height: 150px;
+            width: 270px;
+        }
+        .end-sale {
+            background-color: rgba(0, 0, 0, 0.6); 
+            color: #ffffff; 
+            padding: 5px; 
+            border-radius: 4px; 
+            position: absolute; 
+            bottom: 5px; 
+            right: 0; 
+        }
+        .footer {
+            width: 1200px;
+            font-size: 14px;
+            color: #666666;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 200px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="main">
+        <div class="box logo">
+            <img src="img/icon.jpg" alt="icon">
+        </div>
+    </div>
+
+    <div class="box custom-select" >
+        <select class="select-style">
+            <option value="" >食我-ABOUT US</option>
+            <option value="" >品牌故事Brand Story</option>
+            <option value="" >購物流程Shopping Process</option>
+            <option value="" >會員說明 Member</option>
+            <option value="" >常見問答Q&A</option>
+            <option value="" >聯絡我們Contact Us</option>
+        </select>
+        <select class="select-style">
+            <option value="" >食麵-NOODLES</option>
+            <option value="" >麵系列Noodle Series</option>
+            <option value="" >禮盒系列Gift Box</option>
+        </select>
+        <select class="select-style">
+            <option value="" >食事-EVENT</option>
+        </select>
+        <select class="select-style">
+            <option value="" >食品味-GOOD SENSE</option>
+        </select>
+        <select class="select-style">
+            <option value="" >食影音-VIDEOS</option>
+        </select>
+        <select class="select-style">
+            <option value="" >國際專區-OVERSEAS </option>
+            <option value="" >港澳專區HK&MACAU</option>
+            <option value="" >其他海外專區Others</option>
+        </select>
+    </div>
+
+    <div class="slideshow-container">
+        <img src="img/2000x(1).jpg" width="100%">
+    </div>
+
+    <div class="main">
+        <div class="box">
+            <img src="img/1200x.jpg" alt="icon">
+        </div>
+        
+        <div class="item">
+            <div class="img-item">
+                <img src="img/1-1.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-拌雙粉 醋香豆瓣（1袋/3入）</h3>
+            <p class="name"><s>NT$249</s></p>
+            <p class="name">NT$230</p>
+        </div>
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/1-2.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-拌雙粉 醋香豆瓣（16袋/48入）</h3>
+            <p class="name"><s>NT$3,984</s></p>
+            <p class="name">NT$3,580</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/2-1.png" alt="icon" class="divid1">
+            </div>
+            <h3 class="name">賈以食日-角落小夥伴 寶貝麵三入綜合提袋組</h3>
+            <p class="name"><s>NT$530</s></p>
+            <p class="name">NT$499</p>
+        </div> 
+        
+        <div class="item">
+            <div class="img-item">
+                <img src="img/3-1.png" alt="icon" class="divid3">
+            </div>
+            <h3 class="name">賈以食日-角落小夥伴 寶貝麵（經典原味）</h3>
+            <p class="name">NT$159</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/3-2.png" alt="icon" class="divid3">
+            </div>
+            <h3 class="name">賈以食日-角落小夥伴 寶貝麵（綜合蔬菜）</h3>
+            <p class="name">NT$159</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/3-3.png" alt="icon" class="divid3">
+            </div>
+            <h3 class="name">賈以食日-角落小夥伴 寶貝麵（南瓜地瓜）</h3>
+            <p class="name">NT$159</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/4-1.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-干貝鍋燒意麵</h3>
+            <p class="name"><s>NT$150</s></p>
+            <p class="name">NT$138</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/4-2.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-干貝鍋燒意麵（1箱/16盒）</h3>
+            <p class="name"><s>NT$2,400</s></p>
+            <p class="name">NT$2,080</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/5-1.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-泰式酸辣粉（1盒/3入）</h3>
+            <p class="name"><s>NT$238</s></p>
+            <p class="name">NT$220</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/5-2.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日–泰式酸辣粉（1箱/16盒）</h3>
+            <p class="name"><s>NT$3,808</s></p>
+            <p class="name">NT$3,360</p>
+        </div> 
+
+        <div class="box">
+            <img src="img/chiayishiri.jpg" alt="icon">
+        </div>
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/6-1.png" alt="icon" class="divid3">
+            </div>
+            <h3 class="name">賈以食日-麻花麵（1袋/4入） </h3>
+            <p class="name">NT$268</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/6-2.png" alt="icon" class="divid3">
+            </div>
+            <h3 class="name">賈以食日-燒椒麵（1袋/4入）</h3>
+            <p class="name">NT$268</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/6-3.png" alt="icon" class="divid3">
+            </div>
+            <h3 class="name">賈以食日-麻薑麵（1袋/4入）</h3>
+            <p class="name">NT$268</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/7-1.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-麻辣鴨血冬粉</h3>
+            <p class="name">NT$159</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/7-2.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-麻辣鴨血冬粉（1箱/20盒）</h3>
+            <p class="name">NT$3,180</p>
+        </div> 
+
+        <div class="item">
+            <div class="img-item">
+                <img src="img/7-3.png" alt="icon" class="divid2">
+            </div>
+            <h3 class="name">賈以食日-雪莓餅 (期間限定，售完為止)</h3>
+            <p class="name"><s>NT$250</s></p>
+            <p class="name">NT$230</p>
+        </div> 
+
+        <div class="box">
+            <img src="img/flashsale.jpg" alt="icon">
+        </div>
+
+        <div class="item">
+            <div class="" style="height:auto; margin:15px; position:relative; ">
+                <div style="opacity: 0.6;">
+                    <img src="img/8-1.png" alt="icon" class="divid1">
+                    <span class="end-sale">販售結束</span>
+                </div>
+            </div>
+            <h3 class="name">賈以食日-2021 HAPPY 牛 YEAR 福箱</h3>
+            <p class="name">NT$999</p>
+        </div> 
+
+        <!-- 影片 -->
+        <div class="item" style="margin-bottom: 50px;">
+            <iframe src="https://www.youtube.com/embed/ZPCuv83TAVs" class="divid2 video" style="height: 315px; width: 570px; " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="name video">賈以食日-角落小夥伴寶貝麵</p>
+        </div> 
+
+        <div class="item" style="margin-bottom: 50px;">  
+            <iframe src="https://www.youtube.com/embed/Tso0oDimXtQ" class="divid2 video" style="height: 315px; width: 570px; " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="name video">賈以食日-泰式酸辣粉精神領袖Q&A</p>
+        </div> 
+
+        <div class="item">
+            <iframe src="https://www.youtube.com/embed/MbNDSjRsfRQ" class="divid3 video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="name video">賈以食日形象廣告三部曲/麻煩篇</p>
+        </div> 
+
+        <div class="item">
+            <iframe src="https://www.youtube.com/embed/9kcbL-J5TSU" class="divid3 video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="name video">賈以食日形象廣告三部曲/作畫篇</p>
+        </div> 
+
+        <div class="item">
+            <iframe src="https://www.youtube.com/embed/-LxiDnc-4Eo" class="divid3 video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="name video">賈以食日形象廣告三部曲/分身篇</p>
+        </div> 
+        
+        <div class="item" style="margin-top: 50px; margin-left: auto; margin-right: auto; display: flex;">
+            <a href="https://www.facebook.com/chiaselect/" target="_blank">
+                <div class="item">
+                    <img src="img/fb.jpg" alt="fb" class="divid4">
+                </div> 
+            </a>
+
+            <a href="https://www.instagram.com/chiaselect.tw/" target="_blank">
+                <div class="item">
+                    <img src="img/ig.jpg" alt="ig" class="divid4">
+                </div> 
+            </a>
+
+            <a href="https://line.me/R/ti/p/%40hkt1728y" target="_blank">
+                <div class="item">
+                    <img src="img/line.jpg" alt="linr" class="divid4">
+                </div> 
+            </a>
+
+            <a href="https://www.saucelabinfo.com" target="_blank">
+                <div class="item">
+                    <img src="img/partner.jpg" alt="partner" class="divid4">
+                </div> 
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>
+                <span>
+                    <a class="footer" href="https://www.chiaselect.com/pages/privacypolicy" target="_self">
+                        <span>隱私權聲明</span>
+                    </a>|
+                    <span>&nbsp;
+                        <a class="footer" href="https://www.chiaselect.com/pages/terms" target="_self">
+                            <span>服務條款&nbsp;</span>
+                        </a>
+                    </span>| 2018 © 賈以食日&nbsp;
+                </span>
+                <span>拾躍創意國際有限公司 02-2579-2323</span>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
