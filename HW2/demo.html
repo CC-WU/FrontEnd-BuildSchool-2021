@@ -1,0 +1,1091 @@
+<!-- https://ld-wp.template-help.com/wordpress_imperion/finance_v1/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperion</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prata">
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            width: auto;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            /* 物件水平居中 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .header {
+            display:block;
+            position:absolute;
+            background:url("img/asset 49-c.jpg");
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            width:100%;
+            height:672px;
+            float:right;
+        }
+        ul { /* 取消ul預設的內縮及樣式 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-family: Montserrat, sans-serif;
+        }
+        ul.drop-down-menu {
+            display: inline-block;
+        }
+        ul.drop-down-menu li {
+            position: relative;
+            white-space: nowrap;
+        }
+        ul.drop-down-menu > li {
+            float: left; /* 只有第一層是靠左對齊*/
+        }
+        ul.drop-down-menu a {
+            color: #fff;
+            display: block;
+            padding: 20px 20px;
+            text-decoration: none;
+            line-height: 40px;
+        }
+        ul.drop-down-menu-sub a {
+            background-color: #fff;
+            color: #42474c;
+            display: block;
+            padding: 20px 20px;
+            text-decoration: none;
+            line-height: 40px;
+        }
+        ul.drop-down-menu-sub a:hover { /* 滑鼠滑入按鈕變色*/
+            background-color: #7f8081;
+            color: #c2b697;
+        }
+        /* ul.drop-down-menu li:hover > a {*/ /* 滑鼠移入次選單上層按鈕保持變色 */
+            /* background-color: #ef5c28;
+            color: #fff;
+        } */ 
+        /* 下拉式選單-次選單 */
+        ul.drop-down-menu ul {
+            border: #ccc 1px solid;
+            position: absolute;
+            top: 100%;
+            min-width: 180px;
+        }
+        ul.drop-down-menu ul li {
+            border-bottom: #ccc 1px solid;
+        }
+        ul.drop-down-menu ul li:last-child {
+            border-bottom: none;
+        }
+        ul.drop-down-menu ul { /*隱藏次選單*/
+            display: none;
+        }
+        ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+            display: block;
+        }
+        .container {
+            background: rgba(43,44,50,0.23);
+        }
+        .icon-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 0 0 0;
+        }
+        .sr-only {
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+		}
+        .custom-select {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .big-font {
+            font-size: 140px;
+            line-height: 120px;
+            font-weight: 100;
+            color: #fff;
+            font-family: Prata;
+            letter-spacing: 1px;
+            margin: 120px 0 0 300px;
+        }
+        .big-description {
+            font-size: 20px;
+            line-height: 16px;
+            font-weight: 400;
+            font-family: Montserrat;
+            color: #fff;
+            margin: 20px 0 0 300px;
+        }
+        .slide {
+            color: #fff;
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-family: Montserrat;
+            padding: 70px 0 0 300px;
+        }
+        .box {
+            width: 320px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400; /* 加粗 */
+            line-height: 1.33;
+            font-family: Montserrat, sans-serif;
+            letter-spacing: 0em; /* 字間距 */
+            /* text-transform: uppercase; */
+        }
+        .col1 {
+            padding: 20px 0 0 180px;
+        }
+        .col1:nth-child(2), .col1:nth-child(3) {
+            padding: 20px 0 0 80px;
+        }
+        .col1 > p {
+            font-size: 16px;
+            line-height: 28px; /* 行距 */
+            padding: 0 0 60px;
+            letter-spacing: 0.5px;
+        }
+        .small-icon {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+        .header-row {
+            display: flex;
+        }
+        .header-row .box.col1 {
+            margin: 10px 25px;
+        }
+        /* .header-row .box.col1:hover {
+            border-top: 2px solid tan;
+            transition: .3s;
+        } */
+        .second-block {
+            background-color: #ffffff;
+            height: 320px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            color: #42474c;
+        }
+        .second-block > h3 {
+            width: 250px;
+            height: 160px;
+            padding-right: 100px;
+            margin: 60px 0 0 180px;
+            border-right: 2px solid rgba(30,37,47,0.1);
+            font-style: normal;
+            font-weight: 300;
+            font-size: 32px;
+            line-height: 1.667;
+            font-family: Prata, sans-serif;
+            letter-spacing: 0em;
+            text-align: left;
+            text-transform: none;
+        }
+        .second-block .txt {
+            font-family: Prata, sans-serif;
+            font-size: 18px;
+            margin: 50px;
+            padding: 20px 50px;
+            width: 60%;
+            line-height: 30px;  /*import*/
+            word-wrap: break-word;
+            column-count: 2;
+            column-gap: 10px;
+        }
+        .second-block .txt p:first-child::first-letter {
+            color: #c2b697;
+            font-size: 54px;
+            float: left;
+            padding: 10px;
+        }
+        .third-block {
+            background-color: #c2b697;
+            height: 260px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            color: #ffffff;
+        }
+        .third-block > .title-txt {
+            height: 160px;
+            padding-right: 100px;
+            margin: 80px 0 0 180px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.667;
+            letter-spacing: 0em;
+            text-align: left;
+            text-transform: none;
+        }
+        .third-block > .title-txt > h3 {
+            font-family: Prata, sans-serif;
+            font-size: 34px;
+        }
+        .third-block > .title-txt > p {
+            font-family: Lato, serif;
+            font-size: 18px;
+        }
+        .third-block > .btn > input {
+            margin: 95px 0 0 260px;
+            border-radius: 5px;
+            border: 0;
+            color: #3f4040;
+            font-size: 12px;
+            font-family: Montserrat, sans-serif;
+            background-color: #fafafb;
+            padding: 20px 40px;
+        }
+        .fourth-block {
+            background-color: #ffffff;
+            height: 190px;
+            /* display: flex;
+            flex-direction: row; */
+            width: 80%;
+            justify-content: center;
+            padding-top: 90px;
+            text-align: center;
+            margin: auto;
+        }
+        .fourth-block > .title-txt > h3 {
+            display: inline;
+            font-family: Prata, sans-serif;
+            font-size: 32px;
+            color: #c2b697;
+        }
+        .fourth-block > .title-txt > h3:first-child {
+            color: #424c47;
+        }
+        .fourth-block > .title-txt > p {
+            font-family: Lato, serif;
+            font-size: 18px;
+            color: #424c47;
+            padding-top: 20px;
+            line-height: 1.667;
+        }
+        .fifth-block {
+            background-color: #ffffff;
+            height: 800px;
+            width: 80%;
+            display: flex;
+            margin: auto;
+            justify-content: center;
+        }
+        .fifth-block .service-left .list-left {
+            display: flex;
+            margin: 70px 30px;
+            font-size: 18px;
+            line-height: 25px;
+            color: rgb(72, 72, 82);
+            text-align: right;
+        }
+        .fifth-block .service-right .list-right {
+            display: flex;
+            margin: 70px 30px;
+            font-size: 18px;
+            line-height: 25px;
+            color: rgb(72, 72, 82);
+        }
+        .fifth-block div {
+            margin: 10px;
+            display: inline;
+        }
+        .fifth-block h3 {
+            color: rgb(179, 168, 132);
+            font-weight: bolder;
+        }
+        .fifth-block .service-right .list-right img, .fifth-block .service-left .list-left img {
+            height: 80px;
+            border-radius: 50px;
+        }
+        .sixth-block {
+            height: 460px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:url("img/asset 50.jpeg");
+            background-repeat:no-repeat;
+            background-size: cover;
+            opacity: 0.8;
+            z-index: -20;
+        }
+        .box-txt {
+            padding: 100px;
+            text-align: center;
+        }
+        .sixth-block > .box-txt > h3 {
+            font-size: 50px;
+            font-family: Prata, sans-serif;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        .sixth-block > .box-txt > p {
+            font-size: 12px;
+            font-family: Montserrat, sans-serif;
+            color: #ffffff;
+            width: 100px;
+            line-height: 1.667;
+            letter-spacing: 2px;
+        }
+        .seventh-block {
+            background-color: #ffffff;
+            height: 460px;
+            width: auto;
+            padding: 80px 0 0 180px;
+        }
+        .seventh-block .box {
+            display: flex;
+            width: 100%;
+            padding: 40px 0 0 0;
+        }
+        .seventh-block .box .box-left {
+            width: 44%;
+        }
+        .seventh-block .box .box-left > p {
+            font-family: Lato, sans-serif;
+            font-size: 18px;
+            color: #424c47;
+            line-height: 1.667;
+        }
+        .seventh-block .box .box-left > li {
+            font-family: Lato, sans-serif;
+            font-size: 18px;
+            color: #424c47;
+            line-height: 2;
+            font-weight: 400;
+            padding-top: 10px;
+        }
+        .seventh-block .box .box-right {
+            width: 45%;
+        }
+        .seventh-block > div > h3 {
+            color: #c2b697;
+            font-size: 32px;
+            display: inline;
+        }
+        .seventh-block > div > h3:first-child {
+            color: #424c47;
+        }
+        .progressBar {
+            font-size: 14px;
+            color: #424c47;
+            font-family: Montserrat, sans-serif;
+            margin: 0 0 50px 20px;
+        }
+        .progressBar .bar-title {
+            display: flex;
+            line-height: 20px;
+            justify-content: space-between;
+        }
+        .progressBar .bar {
+            width: 100%;
+            height: 6px;
+            background-color: #f7f7f7;
+            border-radius: 50px;
+        }
+        .progressBar .bar .color {
+            height: 6px;
+            background-color: #c2b697;
+            color: transparent;
+            border-radius: 50px;
+            text-align: right;
+            margin-top: 5px;
+        }
+        .progressBar .bar .color.fs {
+            width: 87%;
+        }
+        .progressBar .bar .color.bs {
+            width: 75%;
+        }
+        .progressBar .bar .color.cp {
+            width: 63%;
+        }
+        .progressBar .bar .color.ee {
+            width: 50%;
+        }
+        .eighth-block {
+            height: 340px;
+            background-color: #f7f7f7;
+            width: 100%;
+            justify-content: center;
+            padding-top: 50px;
+            text-align: center;
+        }
+        .eighth-block > .title-txt > h3 {
+            display: inline;
+            font-family: Prata, sans-serif;
+            font-size: 32px;
+            color: #c2b697;
+            letter-spacing: 2px;
+        }
+        .eighth-block > .title-txt > h3:first-child {
+            color: #424c47;
+        }
+        .eighth-block > div {
+            margin-top: 50px;
+        }
+        .eighth-block > div > a {
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            color: #899296;
+            width: 800px;
+            line-height: 1.667;
+            padding: 18px;
+            text-decoration:none; /* 消除超連結底線 */
+        }
+        .eighth-block > div > a:hover {
+            color: rgb(179, 168, 132);
+            transition: .3s;
+        }
+        .ninth-block {
+            height: 200px;
+            background-color: #ffffff;
+            width: 100%;
+            justify-content: center;
+            padding: 100px 0 70px 0;
+            text-align: center;
+        }
+        .ninth-block > .title-txt > h3 {
+            display: inline;
+            font-family: Prata, sans-serif;
+            font-size: 32px;
+            color: #c2b697;
+            letter-spacing: 2px;
+        }
+        .ninth-block > .title-txt > h3:first-child {
+            color: #424c47;
+        }
+        .ninth-block .dot {
+            margin: 120px;
+        }
+        .ninth-block > div > span {
+            font-size: 1px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50px;
+            background-color: #b8b5b5;
+            margin-right: 5px;
+        }
+        .ninth-block > div > span:hover {
+            background-color: #c2b697;
+            animation: circle .5s alternate forwards;
+        }
+        .ninth-block > div > span:active {
+            background-color: #c2b697;
+        }
+        .tenth-block {
+            background-color: #45464d;
+            display: flex;
+            width: 100%;
+            height: 630px;
+        }
+        .tenth-block .box-left {
+            width: 50%;
+            height: 100%;
+        }
+        .tenth-block .box-left .human {
+            padding: 50px 0 10px 70px;
+            background-color: #45464d;
+            display: flex;
+            width: 100%;
+        }
+        .tenth-block .box-left .human .human-img {
+            filter: grayscale(100%); /* 灰階 */
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tenth-block .box-left .human .human-img:last-child {
+            padding-bottom: 60px;
+        }
+        .tenth-block .box-left .human .human-txt {
+            padding-top: 20px;
+            width: 35%;
+            height: 60%;
+            color: #fff;
+            font-family: Lato, sans-serif;
+        }
+        .tenth-block .box-left .human .human-txt > a {
+            font-size: 28px;
+            line-height: 1.667;
+            font-family: Prata, serif;
+            text-decoration: none;
+            color: #fff;
+        }
+        .tenth-block .box-left .human .human-txt > div {
+            line-height: 40px;
+        }
+        .tenth-block .box-left .human .human-txt > div > p {
+            font-weight: 400;
+            font-size: 16px;
+            font-family: Lato, sans-serif;
+            color: #fff;
+        }
+        .tenth-block .box-left .human .human-txt > h3 {
+            font-weight: 300;
+            font-size: 13px;
+            line-height: 1.667;
+            font-family: Montserrat, sans-serif;
+            color: #fff;
+        }
+        /* .tenth-block .box-left .human .human-txt > div {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255,255,255,0.7);
+            display: inline-block;
+            margin-right: 15px;
+        } */
+        .tenth-block .box-right {
+            background-color: #f7f7f7;
+            width: 50%;
+            height: 100%;
+            line-height: 1.667;
+        }
+        .tenth-block .box-right .title-txt {
+            font-size: 32px;
+            font-family: Prata, serif;
+            color: #424c47;
+            background-color: #f7f7f7;
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+        .tenth-block .box-right .title-txt > h3 {
+            padding: 50px 0 0 100px;
+        }
+        .tenth-block .box-right .office-box {
+            background-color: #f7f7f7;
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+        .tenth-block .box-right .title-txt > h3 > span {
+            color: #c2b697;
+        }
+        .tenth-block .box-right .office-box .office-left, .tenth-block .box-right .office-box .office-right {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #424c47;
+            width: 25%;
+        }
+        .tenth-block .box-right .office-box  {
+            padding: 20px 0 0 0;
+        }
+        .tenth-block .box-right .office-box .office-left {
+            padding: 0 100px 0 100px;
+        }
+        .tenth-block .box-right .office-box .office-left .min-box.office-top, .tenth-block .box-right .office-box .office-right .min-box.office-top {
+            padding-bottom: 40px;
+        }
+        .tenth-block .box-right .office-box .office-left .min-box.office-top > h4, .tenth-block .box-right .office-box .office-right .min-box.office-top > h4 {
+            font-family: Montserrat, sans-serif;
+            font-weight: 700;
+            padding-bottom: 20px;
+        }
+        .tenth-block .box-right .office-box .office-left .min-box.office-top > a, .tenth-block .box-right .office-box .office-right .min-box.office-top > a {
+            font-family: Lato, sans-serif;
+            text-decoration: none;
+            color: #c2b697;
+            display: block;
+        }
+        .eleventh-block {
+            height: 180px;
+            background-color: #c2b697;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .eleventh-block h3{
+            margin: 60px;
+            font-weight: 300;
+            font-size: 42px;
+            font-family: Prata, serif;
+            padding-left: 120px;
+        }
+        .eleventh-block input{
+            background-color: #b6aa8c;
+            height: 42px;
+            width: 40%;
+            border-style:none;
+            outline: none;
+            padding: 0 10px;
+        }
+        .eleventh-block input::placeholder{
+            color:#fff;
+        }
+        .eleventh-block .subscribe-btn{
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: #fff;
+            font-size: 11px;
+            font-family: Montserrat, sans-serif;
+            font-weight: 800;
+            color:#000;
+            width: 8%;
+        }
+        .eleventh-block .subscribe-btn{
+            color: black;
+            opacity: 0.7;
+        }
+        .eleventh-block .subscribe-btn:hover{
+            background-color: #ccc;
+            cursor: pointer; /* 改變鼠標 */
+        }
+        .footer {
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            padding: 50px 0 80px;
+            font-size: 18px;
+            font-family: Lato, sans-serif;
+            color: #42474c;
+        }
+        .footer .contact p {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .footer .contact a {
+            text-decoration: none;
+            color: #c2b697;
+        }
+        .footer .contact_icon {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .footer .contact_icon div {
+            width: 30px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #c2b697;
+            padding: 6px 0 0;
+            margin: 10px;
+        }
+        .footer .copyright {
+            margin: 60px 0 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="container">
+                <a href="#" class="logo">
+                    <h1 class="header-img">
+                        <span class="sr-only">IMPERION</span>
+                        <img class="icon-img" src="img/asset 0.png" alt="IMPERION" title="IMPERION"> 
+                    </h1>
+                </a>
+                <section class="custom-select">
+                    <ul class="drop-down-menu">
+                        <li><a href="https://www.chiaselect.com/pages/aboutus">HOME</a>
+                        </li>
+                        <li><a href="https://www.chiaselect.com/pages/noodles">PAGES ▾</a>
+                            <ul class="drop-down-menu-sub">
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/noodleseries">EX1</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/giftbox">EX2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.chiaselect.com/pages/event">FEATURES ▾</a>
+                            <ul class="drop-down-menu-sub">
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/hkmacau">EX1</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/overseas-shopping-1">EX2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.chiaselect.com/pages/goodsense">NEWS ▾</a>
+                            <ul class="drop-down-menu-sub">
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/hkmacau">EX1</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/overseas-shopping-1">EX2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.chiaselect.com/pages/videos">SHOP ▾</a>
+                            <ul class="drop-down-menu-sub">
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/hkmacau">EX1</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.chiaselect.com/pages/overseas-shopping-1">EX2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <h2 class="big-font"> The Power </h2>
+            <h6 class="big-description"> OF IMAGINATION MAKES US INFINITE  </h6>
+            <div class="slide">
+                ← 03/03 →
+            </div>
+            <div class="header-row">
+                <div class="box col1">
+                    <h3>
+                        <i class="fas fa-globe"></i>
+                        DEVELOPMENT
+                    </h3>
+                    <p>We work alongside national and international organizations.</p>
+                </div>
+                <div class="box col1">
+                    <h3>
+                        <i class="fas fa-atom"></i>
+                        INTEGRATION
+                    </h3>
+                    <p>Committed to conducting its business according to the highest...</p>
+                </div>
+                <div class="box col1">
+                    <h3>
+                        <i class="far fa-gem"></i>
+                        RESPONSIBILITY
+                    </h3>
+                    <p>Responsible customer relations through clear communication...</p>
+                </div>
+            </div>
+            <div class="second-block">
+                <h3>Looking for a First-Class Business Plan</h3>
+                <div class="txt">
+                    <p>We’re a financial and consulting business company of professional thinkers, strategists, digital innovators, designers and problem solvers (everyone gets a mention). Our sense of curiosity brings thinkers, strategists, digital innovators, designers and problem solvers (everyone gets a mention). Our sense of curiosity brings brands to life, gets them talking, and makes sure they’re heard above.</p> 
+                </div>
+            </div>
+            <div class="third-block">
+                <div class="title-txt">
+                    <h3>Unleash Your Team’s Productive Power</h3>
+                    <p>The truly scarce resources now are the time, the talent, and the energy of the people.</p> 
+                </div>
+                <div class="btn">
+                    <!-- <a href="http://wptemplatetesting.com/floyd/imperion/events/" >
+                        <span>GET IN TOUCH</span>
+                    </a> -->
+                    <input type="button" value="GET IN TOUCH" onclick="location.href='http://wptemplatetesting.com/floyd/imperion/events/'">
+                </div>
+            </div>
+            <div class="fourth-block">
+                <div class="title-txt">
+                    <h3>Why Traders</h3>
+                    <h3>Choose Us</h3>
+                    <p>With a community of over 400 million users (and a majority age group being 18 to 29), wouldn’t you want to make sure you’re monitoring what people are posting on social networks? Especially if the demographic of your audience falls in that age range.</p> 
+                </div>
+            </div>
+            <div class="fifth-block">
+                <div class="service-left">
+                    <div class="list-left row1">
+                        <div class="title-txt">
+                            <h3>VISIT</h3>
+                            <p>Our values and ideals are our decision making guide.</p> 
+                        </div>
+                        <div class="icon-left">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                    <div class="list-left row2">
+                        <div class="title-txt">
+                            <h3>SAVE</h3>
+                            <p>We only release our products when we feel they meet our standards.</p> 
+                        </div>
+                        <div class="icon-left">
+                            <i class="fas fa-cloud-download-alt"></i>
+                        </div>
+                    </div>
+                    <div class="list-left row3">
+                        <div class="title-txt">
+                            <h3>EXPLORE</h3>
+                            <p>We rely on the same platform and tools our customers pay us for</p> 
+                        </div>
+                        <div class="icon-left">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="">
+                    <h1 class="">
+                        <span class="sr-only">IMPERION SERVICE</span>
+                        <img class="phone-img" src="img/asset 1.png" alt="IMPERION_SERVICE" title="IMPERION_SERVICE"> 
+                    </h1>
+                </a>
+                <div class="service-right">
+                    <div class="list-right row1">
+                        <div class="icon">
+                            <i class="far fa-clone"></i>
+                        </div>
+                        <div class="title-txt">
+                            <h3>ORGANIZE</h3>
+                            <p>Beautiful products to help people with creative ideas succeed</p>
+                        </div> 
+                        
+                    </div>
+                    <div class="list-right row2">
+                        <div class="icon">
+                            <i class="far fa-comments"></i>
+                        </div>
+                        <div class="title-txt">
+                            <h3>COMMUNICATE</h3>
+                            <p>Creative, stylish, and easy-to-manage online presence.</p> 
+                        </div>
+                        
+                    </div>
+                    <div class="list-right row3">
+                        <div class="icon-right">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="title-txt">
+                            <h3>SHARE</h3>
+                            <p>Share stories and create an impactful online presence.</p> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="sixth-block">
+                <div class="box-txt">
+                    <i class="fas fa-history"></i>
+                    <h3>2007</h3>
+                    <p>COMPANY ESTABLISHED</p>
+                </div>
+                <div class="box-txt">
+                    <i class="far fa-folder-open"></i>
+                    <h3>426</h3>
+                    <p>PROJECTS DONE</p>
+                </div>
+                <div class="box-txt">
+                    <i class="fas fa-people-arrows"></i>
+                    <h3>45+</h3>
+                    <p>BUSINESS PARTHNERS</p>
+                </div>
+                <div class="box-txt">
+                    <i class="far fa-heart"></i>
+                    <h3>1510</h3>
+                    <p>HAPPY CLIENTS</p>
+                </div>
+            </div>
+
+            <div class="seventh-block">
+                <div>
+                    <h3>What We </h3><h3>Are Good At</h3>
+                </div>
+                <div class="box">
+                    <div class="box-left">
+                        <p>With a community of over 400 million users (and a majority age group being 18 to 29), wouldn’t you want to make sure you’re monitoring what people are posting on social networks?</p>
+                        
+                            <li>Article and News research</li>
+                            <li>Company and Industry Research</li>
+                            <li>Industry Research and Market Research</li>
+                            <li>Market Analysis Report</li>
+                        
+                    </div>
+                    <div class="box-right">
+                        <div class="progressBar">
+                            <div class="bar-title">
+                                <h3>FINANCIAL SERVICES</h3>
+                                <p>87%</p>
+                            </div>
+                            <div class="bar">
+                                <div class="color fs"></div>
+                            </div>
+                        </div>
+                        <div class="progressBar">
+                            <div class="bar-title">
+                                <h3>BUSINESS SERVICES</h3>
+                                <p>75%</p>
+                            </div>
+                            <div class="bar">
+                                <div class="color bs"></div>
+                            </div>
+                        </div>
+                        <div class="progressBar">
+                            <div class="bar-title">
+                                <h3>CONSUMER PRODUCTS</h3>
+                                <p>63%</p>
+                            </div>
+                            <div class="bar">
+                                <div class="color cp"></div>
+                            </div>
+                        </div>
+                        <div class="progressBar">
+                            <div class="bar-title">
+                                <h3>ENERGY AND ENVIROMENT</h3>
+                                <p>50%</p>
+                            </div>
+                            <div class="bar">
+                                <div class="color ee"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eighth-block">
+                <div class="title-txt">
+                    <h3>Our Latest</h3>
+                    <h3>Projects</h3>
+                </div>
+                <div>
+                    <a href="javascript:;">ALL</a>
+                    <a href="javascript:;">ADVANCED ANALYTICS</a>
+                    <a href="javascript:;">CORPORATE FINANCE</a>
+                    <a href="javascript:;">DIGITAL</a>
+                    <a href="javascript:;">ORGANIZATION</a>
+                    <a href="javascript:;">PRIVATE EQUITY</a>
+                    <a href="javascript:;">PRIVATE EQUITY</a>
+                    <a href="javascript:;">STRATEGY & MARKETING</a>
+                </div>
+            </div>
+            
+            <div class="ninth-block">
+                <div class="title-txt">
+                    <h3>Clients</h3>
+                    <h3>Testimonials</h3>
+                </div>
+                <div class="dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="tenth-block">
+                <div class="box-left">
+                    <div class="human">
+                        <div class="human-img">
+                            <img src="img/human1.jpg" alt="" class="">
+                        </div>
+                        <div class="human-txt">
+                            <h3>CEO, OWNER</h3>
+                            <a href="">Sarah Johnson</a>
+                            <div>
+                                <p><i class="fas fa-mobile-alt"></i>  + 800 123 45 70</p>
+                            </div>
+                            <div>
+                                <p><i class="fas fa-envelope"></i>  info@imperion.com</p>
+                            </div>
+                            <div>
+                                <p><i class="fab fa-skype"></i>  sarah.johnson</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="human">
+                        <div class="human-img">
+                            <img src="img/human2.jpg" alt="" class="">
+                        </div>
+                        <div class="human-txt">
+                            <h3>MARKETING DEPARTMEN</h3>
+                            <a href="">Irene Doe</a>
+                            <div>
+                                <p><i class="fas fa-mobile-alt"></i>  + 800 123 45 85</p>
+                            </div>
+                            <div>
+                                <p><i class="fas fa-envelope"></i>  info@imperion.com</p>
+                            </div>
+                            <div>
+                                <p><i class="fab fa-skype"></i>  irene.doe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-right">
+                    <div class="title-txt">
+                        <h3>Our <span>Offices</span></h3>
+                    </div>
+                    <div class="office-box">
+                        <div class="office-left">
+                            <div class="min-box office-top">
+                                <h4>HEAD OFFICE#1</h4>
+                                <p>4096 N Highland St, Arlington VA 32101, USA</p>
+                                <a href="mailto:imperion@company.com">imperion@company.com</a>
+                                <a href="tel:800 1234 56 78">800 1234 56 78</a>
+                            </div>
+                            <div class="min-box office-bottom">
+                                <h4>BUSINESS HOURS</h4>
+                                <p>Mon-Thu: 9:30 - 21:00</p>
+                                <p>Fri: 6:00 - 21:00</p>
+                                <p>Sat: 10:00 - 15:00</p>
+                            </div>
+                        </div>
+                        <div class="office-right">
+                            <div class="min-box office-top">
+                                <h4>HEAD OFFICE#2</h4>
+                                <p>4096 N Highland St, Arlington VA 32101, USA</p>
+                                <a href="mailto:imperion@company.com">imperion@company.com</a>
+                                <a href="tel:800 1234 56 78">800 1234 56 78</a>
+                            </div>
+                            <div class="min-box office-bottom">
+                                <h4>BUSINESS HOURS</h4>
+                                <p>Mon-Thu: 9:30 - 21:00</p>
+                                <p>Fri: 6:00 - 21:00</p>
+                                <p>Sat: 10:00 - 15:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eleventh-block">
+                <h3>Stay Always In Touch</h3>
+                <input type="text" placeholder="Your Email Address">
+                <input class="subscribe-btn" type="button" value="Subscribe" onclick="location.href='#'">
+            </div>
+
+            <div class="footer">
+                <div class="contact">
+                    <p>Address:4096 N Highland St, Arlington VA 32101, USA</p>
+                    <p>Email: <a href="mailto:imperion@company.com">imperion@company.com</a></p>
+                    <p>Phone: <a href="tel:80012345678">800 1234 56 78</a></p>
+                </div>
+                <div class="contact_icon">
+                    <div><a href="https://www.linkedin.com/company/18088573/"><i class="fas fa-info"></i></a></div>
+                    <div><a href="https://twitter.com/zemezlab"><i class="fab fa-twitter-square"></i></a></div>
+                    <div><a href="https://www.facebook.com/zemezlab/"><i class="fab fa-facebook-f"></i></a></div>
+                    <div><a href="https://www.instagram.com/zemezlab"><i class="fab fa-instagram"></i></a></div>
+                </div>
+                <div class="copyright">
+                    &copy; 2021 Imperion. All Rights Reserved.
+                </div>
+            </div>
+
+        </div>
+        
+        
+                
+        
+    </div>
+</body>
+</html>
