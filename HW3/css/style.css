@@ -1,0 +1,236 @@
+.wrap {
+	width: 960px;
+	margin: auto;
+	padding-bottom: 200px;
+}
+.title {
+	position: relative;
+	font-size: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	text-align: center;
+	padding: 60px 0 20px 0;
+}
+.title h1 {
+	font-size: 40px;
+	font-family: "微軟正黑體";
+	text-align: center;
+	font-weight: bold;
+}
+.title .line {
+	display: block;
+	width: 38px;
+	height: 4px;
+	margin: 18px auto 0;
+	background-color: #000000;
+}
+.selector {
+	text-align: center;
+	padding: 10px 0 10px 0;
+	margin: 20px 0 0 0;
+	font-size: 18px;
+	overflow: hidden;
+}
+/* 選擇列 */
+.selector a { /* 原先顯示 */
+	position: relative;
+	margin: 10px;
+	padding: 10px 49.212px;
+	border: 1px dotted #000000;
+	box-sizing: border-box;
+	text-decoration:none;
+	color: #000000;
+}
+.selector a:first-child {
+	margin-left: 0;
+}
+.selector a:last-child {
+	margin-right: 0;
+}
+.selector a > span { /* 觸碰顯示 */
+	position: absolute;
+	top: 90%;
+	left: 0;
+	box-sizing: border-box;
+	opacity: 1;
+	width: 100%;
+	padding: 10px 10px 10px 10px;
+	height: 100%;
+	color: #fff;
+	background-color: #ae0014;
+	transition: .2s;
+}
+.selector a:hover span {
+	opacity: 1;
+	top: 0;
+}
+.control {
+	width: 960px;
+	height: 900px;
+	/* background-color: blueviolet; */
+	position: relative;
+	margin-bottom: 20px;
+}
+.gray-box {
+	background-color: #eeeeee;
+	opacity: 0.6;
+	float: right;
+	width: 439px;
+	height: 280px;
+	position: relative;
+	left: 0;
+	top: -240px;
+	z-index: -1;
+}
+.txt {
+	height: 388px;
+	width: 355px;
+	position: relative;
+	top: 118px;
+	left: 0px;
+	z-index: 1;
+}
+.box-title {
+	background-color: #ae0014;
+	color: #fff;
+	display: flex;
+}
+.box-title span {
+	transform:rotate(90deg);
+	line-height: 60px;
+	height: auto;
+	width: 50px;
+	height: 100%;
+	padding: 0 12px;
+	margin: 0;
+	font-size: 120px;
+}
+.box-title h2 {
+	padding: 20px 10px;
+	font-size: 60px;
+}
+.box {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 24px;
+	line-height: 1.667;
+	font-weight: 600;
+	padding: 20px;
+	box-sizing: border-box;
+	height: 250px;
+}
+.box p {
+	font-size: 20px;
+	font-weight: 100;
+}
+.description {
+	background-color: #eeeeee;
+	position: absolute;
+	padding: 15px;
+	width: 650px;
+	position: absolute;
+	top: 635px;
+	left: 50px;
+}
+.description-title {
+	display: block;
+	font-size: 3em;
+	color: #aaa;
+	position: relative;
+	color: #ae0014;
+	font-size: 20px;
+	font-weight: bold;
+}
+.description-title::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	background: #ae0014;
+	width: 65%;
+	height: 2px;
+}
+.description-title::after {
+	right: 3%;
+}
+.description h4 {
+	background-color: #000000;
+	color: #ffffff;
+	border-radius: 4px;
+	font-size: 20px;
+	padding: 2px 10px;
+	display: inline-block;
+	font-weight: 500;
+}
+.description li {
+	list-style: none;
+	color: gray;
+	font-size: 16px;
+	padding: 5px 0 5px 20px;
+	padding-left: 2em;
+	text-indent: -1em;
+	font-weight: 600;
+}
+.description li::before {
+	content: "ㆍ";
+	color: rgb(245, 29, 29);
+}
+.car-link {
+	background-image:url("img/advantage-1-video-button-bg.png");
+	background-repeat:no-repeat;
+	background-size: cover;
+	height: 430px;
+	width: 695px;
+	margin: -150px 0 0 190px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	position: absolute;
+}
+.security, .people {
+	width: 960px;
+	height: 820px;
+	position: relative;
+	margin-bottom: 100px;
+}
+.security .description, .people .description {
+	left: 280px;
+}
+.security .txt, .people .txt {
+	left: 605px;
+}
+.security .car-link {
+	background-image:url("img/advantage-2-video-button-bg.png");
+	margin: -150px 0 0 0;
+	justify-content: flex-start;
+}
+.people .car-link {
+	background-image:url("img/advantage-4-video-button-bg.png");
+	margin: -150px 0 0 0;
+	justify-content: flex-start;
+}
+.security .gray-box, .people .gray-box {
+	left: -170px;
+	top: -240px;
+	width: 518px;
+	height: 440px;
+}
+.ride {
+	width: 960px;
+	height: 820px;
+	position: relative;
+	margin-bottom: 100px;
+}
+.ride .description, .proud .description {
+	top: 640px;
+}
+.ride .car-link {
+	background-image:url("img/advantage-3-video-button-bg.png");
+}
+.proud {
+	width: 960px;
+	height: 820px;
+	position: relative;
+}
+.proud .car-link {
+	background-image:url("img/advantage-5-video-button-bg.png");
+}
