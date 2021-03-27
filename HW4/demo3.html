@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多層次收合選單</title>
+    <link rel="icon" href="http://pic.90sjimg.com/design/00/04/32/50/59291c63ee6e1.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            background-color: #546377;
+        }
+        .side-menu {
+            position: relative;
+            width: 300px;
+            height: 100%;
+            padding: 50px 0;
+            box-sizing: border-box; 
+            background-image: linear-gradient(0deg, #3381b0, #c2196c); /* 漸層背景 */
+            transform: translateX(-100%); 
+            transition: .3s; 
+            display: flex;
+            flex-direction: column;
+            box-shadow: 5px 0px 10px hsla(240, 40%, 15%, .6);
+        }
+
+        /* 搜尋框 */
+        .side-menu form {
+            display: flex;
+            margin: 0 10px 50px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, .4);
+        }
+        .side-menu form input,
+        .side-menu form button {
+            border: none;
+            background-color: transparent; 
+            color: #fff; 
+            padding: 5px 10px;
+        }
+        .side-menu form input {
+            width: 230px;
+        }
+        .side-menu form button {
+            width: 50px;
+        }
+        .side-menu form input:focus,
+        .side-menu form button:focus {
+            outline: none;
+        }
+
+        /* 收合鍵 */
+        .side-menu label {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background-color: #000;
+            color: #fff;
+            right: -40px; 
+            top: 0; 
+            bottom: 0;
+            margin: auto; 
+            line-height: 80px;
+            text-align: center; 
+            font-style: 30px; 
+            border-radius: 0 10px 10px 0;
+        }
+        #side-menu-switch {
+            position: absolute; 
+            opacity: 0;
+            z-index: -1;
+        }
+        #side-menu-switch:checked + .side-menu {
+            transform: translateX(0);
+        }
+        #side-menu-switch:checked + .side-menu label .fa {
+            transform: scaleX(-1); 
+        }
+        #side-menu-switch:checked + .side-menu nav {
+            visibility: visible 
+        }
+
+        /* 選單 */
+        nav {
+            visibility: hidden  
+        }
+        nav ul a {
+            display: block; 
+            padding: 10px;
+            color: #fff;
+            text-decoration: none; 
+            position: relative;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        nav ul li + li a::before { /* 選單中間線 */
+            content: ''; 
+            position: absolute; 
+            border-top: 1px solid rgba(255, 255, 255, .4);
+            top: 0; 
+            left: 10px;
+            right: 10px;
+        }
+        nav ul a .fa { 
+            margin-right: -1.1em; 
+            transform: scale(0); 
+            transition: .3s; 
+        }
+        nav ul li:hover .fa { /* 觸碰圖示顯示 */
+            margin-right: .5em;
+            transform: scale(1);
+        }
+        nav ul li:hover > a { 
+            background-color: rgba(0, 0, 0, .5);
+        }
+        nav ul li {
+            position: relative; 
+        }
+        nav ul li ul {
+            visibility: hidden;
+            position: absolute;
+            left: 100%; 
+            top: 6px;
+            width: 300px;
+            background-color: rgba(255, 255, 255, .2);
+            box-shadow: 5px 5px 10px hsla(240, 40%, 15%, .6);
+        }
+        nav ul li a:hover ~ul {
+            visibility: visible; 
+        }
+        nav ul li ul:hover { 
+            visibility: visible;
+            z-index: 1; 
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" name="" id="side-menu-switch">
+
+    <div class="side-menu">
+        <!-- 搜尋框 -->
+        <form action="">
+            <input type="search" name="" id="" placeholder="請輸入關鍵字">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+
+        <!-- 選單 -->
+        <nav>
+            <ul>
+                <!-- 選項一 -->
+                <li>
+                    <a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>選項一</a>
+                    <ul>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項一</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項二</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項三</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項四</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 選項二 -->
+                <li>
+                    <a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>選項二</a>
+                    <ul>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項一</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項二</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項三</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項四</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 選項三 -->
+                <li>
+                    <a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>選項三</a>
+                    <ul>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項一</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項二</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項三</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項四</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 選項四 -->
+                <li>
+                    <a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>選項四</a>
+                    <ul>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項一</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項二</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項三</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項四</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 選項五 -->
+                <li>
+                    <a href="#"><i class="fa fa-coffee" aria-hidden="true"></i>選項五</a>
+                    <ul>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項一</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項二</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項三</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 子選單 -->
+                        <li>
+                            <a href="#"><i class="" aria-hidden="true"></i>1選項四</a>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項一</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項二</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="" aria-hidden="true"></i>2選項三</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 收合鍵 -->
+        <label for="side-menu-switch"> 
+            <i class="fa fa-angle-right"></i>
+        </label>
+    </div>
+
+</body>
+</html>
