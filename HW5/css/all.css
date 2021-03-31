@@ -5,8 +5,8 @@
 	display: flex;
 }
 .header-box .box img {
-	height: 100%;
-	width: 60%;
+	height: 70%;
+	width: 70%;
 }
 .header-box .box {
 	line-height: 1.2em;
@@ -46,7 +46,7 @@
 	max-width: 70%;
 }
 .icon-box {
-	min-height: 240px;
+	min-height: 250px;
 	justify-content: space-evenly;
 }
 .week-box {
@@ -56,10 +56,6 @@
 }
 .card-text {
 	line-height: 1.667em;
-}
-.footer {
-	border-top: 6px solid black;
-	background-color: rgb(238,238,238);
 }
 .external-link {
 	display: flex;
@@ -79,7 +75,7 @@
 .top-area {
 	width: 100%;
 	/* height: 500px; */
-	background-color: pink;
+	/* background-color: pink; */
 	position: relative;
 }
 .top-area img {
@@ -140,4 +136,8 @@
 .line-mask p {
 	font-family: メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
 	letter-spacing: 0.15em;
+}
+.footer {
+	border-top: 6px solid black;
+	background-color: rgb(238,238,238);
 }
