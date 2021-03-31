@@ -1,0 +1,143 @@
+.wrap {
+	text-align: center;
+}
+.header-box {
+	display: flex;
+}
+.header-box .box img {
+	height: 100%;
+	width: 60%;
+}
+.header-box .box {
+	line-height: 1.2em;
+	font-family:open sans,sans-serif
+}
+.header-box .box h1 {
+	font-size: 30px;
+}
+.header-box .box p {
+	font-size: 12px;
+}
+.line-mask {
+	background-color: rgba(0, 67, 138, 0.836);
+}
+.card {
+	min-height: 200px;
+}
+.card-body .card-title {
+	line-height: 2em;
+	font-weight: bold;
+}
+.icon {
+	max-height: 50%;
+	max-width: 50%;
+	padding-bottom: 50px;
+}
+.sql-icon {
+	max-height: 20%;
+	max-width: 20%;
+}
+.github-icon {
+	max-height: 30%;
+	max-width: 30%;
+}
+.txt-icon {
+	max-height: 70%;
+	max-width: 70%;
+}
+.icon-box {
+	min-height: 240px;
+	justify-content: space-evenly;
+}
+.week-box {
+	min-height: 120px;
+	padding: 30px;
+	box-sizing: border-box;
+}
+.card-text {
+	line-height: 1.667em;
+}
+.footer {
+	border-top: 6px solid black;
+	background-color: rgb(238,238,238);
+}
+.external-link {
+	display: flex;
+	align-items: flex-end;
+	background-color: rgb(238,238,238);
+}
+.footer-icon a {
+	color: black;
+	text-decoration:none;
+}
+.external-link {
+	justify-content: space-between;
+}
+.footer-master {
+	background-color: rgb(238,238,238);
+}
+.top-area {
+	width: 100%;
+	/* height: 500px; */
+	background-color: pink;
+	position: relative;
+}
+.top-area img {
+	width: 100%;
+	/* height: 500px; */
+}
+.text-area {
+	/* background-color: rgba(255, 0, 0, .5); */
+	position: absolute; 
+	display: flex; 
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: auto;
+}
+.text-area:last-child {
+	height: 200px;
+	margin: auto;
+	justify-content: center; 
+}
+.text-area-btn {
+	position: absolute;
+	display: flex; 
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-bottom: 100px;
+	justify-content: center; 
+}
+.text-area .para {
+	width: 100%;
+	height: 100%;
+}
+.title {
+	font-size: 77px;
+	font-family: open sans,sans-serif;
+	color: white;
+}
+.text-area .para p {
+	font-family:メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+	color: white;
+	font-size: 20px;
+}
+.text-area-btn .para a {
+	font-family:メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+	color: white;
+	font-size: 16px;
+	background-color: #3b9de999;
+	text-decoration:none;
+}
+.nav-link:hover {
+	color: #57bbbf;
+}
+.pic-box {
+	z-index: -1;
+}
+.line-mask p {
+	font-family: メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+	letter-spacing: 0.15em;
+}
