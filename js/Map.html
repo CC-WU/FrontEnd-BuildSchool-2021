@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-l7pbFN--_30oTRjwVrHgjZ_Rl8uUwA&callback=initMap&libraries=&v=weekly"
+        async></script>
+    <script>
+        const water_url = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%87%AA%E4%BE%86%E6%B0%B4%E7%94%A8%E9%87%8F.json';
+        const region_url = 'https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json';
+
+        let xhr = new XMLHttpRequest();
+        var msg;
+        let outputSet = [];
+        let pointSet = [];
+        let year = '109';
+        let month = '12';
+
+        function requestJSON(url) {
+            xhr.onload = function() {
+                msg = JSON.parse(this.responseText);
+            }
+            xhr.open('GET', url, false);
+            xhr.send();
+        }
+
+        requestJSON(water_url);
+        water_msg = msg;
+        requestJSON(region_url);
+        region_msg = msg;
+
+        water_msg.TaiwanWaterExchangingData.StatisticofWaterResourcesClass.StatisticofWaterUsageClass.TheConsumptionOfWater.forEach((item, index) => {
+            if( item.Year == year && item.Month == month ) {
+                outputSet[`${(item.County).replace('台', '臺')} ${item.Town}`] = { key: `${(item.County).replace('台', '臺')} ${item.Town}`, water: `用水量: ${item.TheDailyDomesticConsumptionOfWaterPerPerson}`};
+            }
+        });
+        region_msg.forEach((item2, index2) => {
+            if(Object.keys(outputSet).some(x => (x == `${item2.City} ${item2.District}`)) == true) {
+                Object.assign(outputSet[`${item2.City} ${item2.District}`], { point: { lat: item2.Lat, lng: item2.Lng } });
+            }
+        });
+
+        let map;
+        const CHU = { lat: 24.760435537567098, lng: 120.95308295379635 };
+        
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 8,
+            });
+
+            for (const [key, value] of Object.entries(outputSet)) {
+                new google.maps.Marker({
+                    position: value.point,
+                    map,
+                    title: `${value.key} ${value.water}`,
+                    animation: google.maps.Animation.DROP
+                });
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
